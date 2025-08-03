@@ -15,15 +15,23 @@
 }
 
 body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 img {
   object-fit: cover;
-  height: 200px;
+  height: 152px;
+  width: 100%;
 }
 
 ul {
@@ -45,6 +53,29 @@ ul {
   height: 200px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
     z-index 0s;
+}
+
+.img-info {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  text-align: center;
+}
+
+.image-describe {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #808080;
+}
+
+b {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
 }
 
 .gallery-item:hover,
@@ -99,12 +130,11 @@ button:focus {
   margin-right: 8px;
 }
 
-.input:hover,
-.input:focus {
+.input:hover {
   border: 1px solid #000000;
 }
 
-.input:active {
+.input:focus {
   border: 1px solid #4e75ff;
   color: #2e2f42;
 }
@@ -112,3 +142,44 @@ button:focus {
 .form {
   margin-top: 36px;
 }
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  background:
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%
+  }
+
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%
+  }
+
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0}
+  }
+
+  .is-hidden:not(:focus):not(:active) {
+    position: absolute;
+  
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+  
+    white-space: nowrap;
+  
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }

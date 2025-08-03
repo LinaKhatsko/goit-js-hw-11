@@ -11,9 +11,9 @@ export async function getImagesByQuery(query) {
     orientation: 'horizontal',
     safesearch: true,
   };
-
+    console.log(query);
  return axios
-    .get(BASE_URL, { params: searchParams })
+    .get(BASE_URL, { params})
     .then((response) => response.data)
     .catch(error => {
       console.error("Error fetching images:", error);
